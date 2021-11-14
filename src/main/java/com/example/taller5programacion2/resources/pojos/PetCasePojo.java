@@ -1,13 +1,13 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class PetCase {
+public class PetCasePojo {
     private Integer case_id;
     private String created_at;
     private String type;
     private String description;
     private Integer pet_id;
 
-    public PetCase(Integer case_id, String created_at, String type, String description, Integer pet_id) {
+    public PetCasePojo(Integer case_id, String created_at, String type, String description, Integer pet_id) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;

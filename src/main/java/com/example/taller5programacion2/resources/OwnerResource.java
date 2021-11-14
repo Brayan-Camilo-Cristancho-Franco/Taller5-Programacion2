@@ -1,7 +1,5 @@
 package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.Owner;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,7 +10,7 @@ public class OwnerResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Response modify(@PathParam("username")String username, Owner owner) {
+    public Response modify(@PathParam("username")String username, com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo owner) {
 
         return Response.ok()
                 .entity(owner)

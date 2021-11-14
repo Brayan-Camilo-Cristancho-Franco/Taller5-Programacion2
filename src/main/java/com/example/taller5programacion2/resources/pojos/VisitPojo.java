@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class Visit {
+public class VisitPojo {
 
     private Integer visit_id;
     private String created_at;
@@ -9,7 +9,7 @@ public class Visit {
     private String vet_id;
     private Integer pet_id;
 
-    public Visit(Integer visit_id, String created_at, String type, String description, String vet_id, Integer pet_id) {
+    public VisitPojo(Integer visit_id, String created_at, String type, String description, String vet_id, Integer pet_id) {
         this.visit_id = visit_id;
         this.created_at = created_at;
         this.type = type;

@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class Pet {
+public class PetPojo {
 
     private Integer pet_id;
     private String microchip;
@@ -12,7 +12,7 @@ public class Pet {
     private String picture;
     private String owner_id;
 
-    public Pet(Integer pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, String owner_id) {
+    public PetPojo(Integer pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, String owner_id) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;

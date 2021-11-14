@@ -1,7 +1,5 @@
 package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.Official;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -11,7 +9,7 @@ public class OfficialResource {
 
         @PUT
         @Produces(MediaType.APPLICATION_JSON)
-        public Response modify(@PathParam("username")String username, Official official) {
+        public Response modify(@PathParam("username")String username, com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo official) {
 
             return Response.ok()
                     .entity(official)

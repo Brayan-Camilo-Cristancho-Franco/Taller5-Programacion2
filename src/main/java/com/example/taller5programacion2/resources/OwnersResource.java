@@ -1,7 +1,5 @@
 package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.Owner;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,9 +12,9 @@ public class OwnersResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
 
-        List<Owner> owners = new ArrayList<Owner>();
-        owners.add(new Owner("pepe",1, "Gabriel Garcia Marquez","calle 15 # 65-56","gaitan"));
-        owners.add(new Owner("Pably",2, "Pablo Neruda","calle 48 # 75-86","normandia"));
+        List<com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo> owners = new ArrayList<com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo>();
+        owners.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo("pepe",1, "Gabriel Garcia Marquez","calle 15 # 65-56","gaitan"));
+        owners.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo("Pably",2, "Pablo Neruda","calle 48 # 75-86","normandia"));
 
         return Response.ok()
                 .entity(owners)
@@ -26,7 +24,7 @@ public class OwnersResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(Owner owner) {
+    public Response create(com.example.taller5programacion2.jpa.entities.resources.pojos.OwnerPojo owner) {
 
         owner.setUsername("pablo");
 

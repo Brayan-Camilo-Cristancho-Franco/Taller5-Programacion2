@@ -1,7 +1,5 @@
 package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.Official;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -15,9 +13,9 @@ public class OfficialsResource {
     @Produces(MediaType.APPLICATION_JSON)
         public Response list() {
 
-        List<Official> officials = new ArrayList<Official>();
-        officials.add(new Official("pepe", "Gabriel Garcia Marquez"));
-        officials.add(new Official("pedro", "Jorge Isaacs"));
+        List<com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo> officials = new ArrayList<com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo>();
+        officials.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo("pepe", "Gabriel Garcia Marquez"));
+        officials.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo("pedro", "Jorge Isaacs"));
 
         return Response.ok()
                 .entity(officials)
@@ -27,7 +25,7 @@ public class OfficialsResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(Official official) {
+    public Response create(com.example.taller5programacion2.jpa.entities.resources.pojos.OfficialPojo official) {
 
         official.setUsername("pepito");
 

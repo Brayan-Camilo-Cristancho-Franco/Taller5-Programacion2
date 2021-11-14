@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class Owner {
+public class OwnerPojo {
     private String username;
     private Integer person_id;
     private String name;
@@ -8,9 +8,9 @@ public class Owner {
     private String neighborhood;
 
 
-    public Owner (){}
+    public OwnerPojo(){}
 
-    public Owner(String username, Integer person_id, String name, String adress, String neighborhood) {
+    public OwnerPojo(String username, Integer person_id, String name, String adress, String neighborhood) {
         this.username = username;
         this.person_id = person_id;
         this.name = name;

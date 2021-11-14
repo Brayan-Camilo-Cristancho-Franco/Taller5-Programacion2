@@ -1,14 +1,14 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class Official {
+public class OfficialPojo {
     private String username;
     private String name;
     private String status;
 
 
-    public Official(){}
+    public OfficialPojo(){}
 
-    public Official(String username, String name) {
+    public OfficialPojo(String username, String name) {
         this.username = username;
         this.name = name;
     }

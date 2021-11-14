@@ -1,13 +1,13 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
-public class Vet {
+public class VetPojo {
 
     private String username;
     private String name;
     private String adress;
     private String neighborhood;
 
-    public Vet(String username, String name, String adress, String neighborhood) {
+    public VetPojo(String username, String name, String adress, String neighborhood) {
         this.username = username;
         this.name = name;
         this.adress = adress;

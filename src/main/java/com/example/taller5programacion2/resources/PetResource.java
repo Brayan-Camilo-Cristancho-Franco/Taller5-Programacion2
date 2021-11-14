@@ -1,7 +1,5 @@
 package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.Pet;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,7 +10,7 @@ public class PetResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Response modify(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id, Pet pet) {
+    public Response modify(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id, com.example.taller5programacion2.jpa.entities.resources.pojos.PetPojo pet) {
 
         return Response.ok()
                 .entity(pet)
