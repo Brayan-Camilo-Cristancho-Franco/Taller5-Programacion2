@@ -1,7 +1,7 @@
-package com.example.taller5programacion2.resources;
+package com.example.taller5programacion2.jpa.entities.resources;
 
 
-import com.example.taller5programacion2.resources.pojos.PetCase;
+import com.example.taller5programacion2.jpa.entities.resources.pojos.PetCase;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

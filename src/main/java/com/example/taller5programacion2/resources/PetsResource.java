@@ -1,11 +1,10 @@
-package com.example.taller5programacion2.resources;
+package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.resources.pojos.Pet;
+import com.example.taller5programacion2.jpa.entities.resources.pojos.Pet;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 

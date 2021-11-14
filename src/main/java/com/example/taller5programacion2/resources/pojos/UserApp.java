@@ -1,4 +1,4 @@
-package com.example.taller5programacion2.resources.pojos;
+package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
 public class UserApp {
     private String username;

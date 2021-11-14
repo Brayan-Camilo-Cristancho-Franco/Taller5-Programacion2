@@ -1,6 +1,6 @@
-package com.example.taller5programacion2.resources;
+package com.example.taller5programacion2.jpa.entities.resources;
 
-import com.example.taller5programacion2.resources.pojos.UserApp;
+import com.example.taller5programacion2.jpa.entities.resources.pojos.UserApp;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
