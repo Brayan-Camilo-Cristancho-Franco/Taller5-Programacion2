@@ -1,0 +1,58 @@
+package com.example.taller5programacion2.jpa.repositories;
+
+import com.example.taller5programacion2.jpa.entities.Official;
+import com.example.taller5programacion2.jpa.entities.UserApp;
+
+import javax.persistence.EntityManager;
+import java.util.List;
+import java.util.Optional;
+
+public class OfficialRepositoryImpl implements OfficialRepository {
+
+    private EntityManager entityManager;
+
+    public OfficialRepositoryImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public List<Official> findAll() {
+        return entityManager.createQuery("from Author").getResultList();
+    }
+
+    /* public Optional<Official> findByName(String name) {
+         Official official = entityManager.createNamedQuery("Official.findByName", Author.class)
+                 .setParameter("name", name)
+                 .getSingleResult();
+         return author != null ? Optional.of(author) : Optional.empty();
+     }*/
+    public Optional<Official> update(String username, String name) {
+
+        try {
+            entityManager.getTransaction().begin();
+
+            Official official = entityManager.find(Official.class, username);
+            official.setName(name);
+
+            //entityManager.update(owner); // Revisar si esto es obligatorio
+            entityManager.getTransaction().commit();
+
+            return Optional.of(official);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+
+    public Optional<Official> save(Official official) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(official);
+            entityManager.getTransaction().commit();
+            return Optional.of(official);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+}

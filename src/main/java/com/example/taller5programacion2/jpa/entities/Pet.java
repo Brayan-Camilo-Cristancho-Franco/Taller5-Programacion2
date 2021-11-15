@@ -7,11 +7,15 @@ import java.util.List;
 @Entity
 @Table(name = "Pet") // Optional
 @NamedQueries({
+
         @NamedQuery(name = "Pet.findByMicrochip",
-                query = "SELECT a FROM Pet a WHERE a.microchip = :name")
+                query = "SELECT a FROM Pet a WHERE a.microchip = :name"),
+
+        @NamedQuery(name = "Pet.findAll",
+                query = "SELECT a FROM Pet a")
 })
 public class Pet {
-    private String hola;
+
 
     @Id
     @GeneratedValue
@@ -39,11 +43,11 @@ public class Pet {
     @Column(name = "picture", nullable = false)
     private String picture;
 
-    @OneToMany(mappedBy = "pet_id")
+    @OneToMany(mappedBy = "pet")
     private List<PetCase> Petscase = new ArrayList<>();
 
 
-    @OneToMany(mappedBy = "pet_id")
+    @OneToMany(mappedBy = "pet")
     private List<Visit> visits = new ArrayList<>();
 
     @ManyToOne
@@ -166,12 +170,12 @@ public class Pet {
 
     public void addPetCase(PetCase petcase) {
         Petscase.add(petcase);
-        petcase.setPet_id(this);
+        petcase.setPet(this);
     }
 
     public void addVisit(Visit visit) {
         visits.add(visit);
-        visit.setPet_id(this);
+        visit.setPet(this);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.services;
 
-import edu.unbosque.JPATutorial.jpa.entities.Author;
+/*import edu.unbosque.JPATutorial.jpa.entities.Author;
 import edu.unbosque.JPATutorial.jpa.entities.Book;
 import edu.unbosque.JPATutorial.jpa.repositories.AuthorRepository;
 import edu.unbosque.JPATutorial.jpa.repositories.AuthorRepositoryImpl;
@@ -40,4 +40,4 @@ public class BookService {
 
     }
 
-}
+}*/

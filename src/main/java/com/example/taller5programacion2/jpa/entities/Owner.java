@@ -4,6 +4,8 @@ import com.example.taller5programacion2.jpa.entities.Pet;
 import com.example.taller5programacion2.jpa.entities.UserApp;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Owner") // Optional
@@ -31,16 +33,19 @@ public class Owner {
     private String neighborhood;
 
 
+    @OneToMany(mappedBy = "owner")
+    private List<Pet> pets = new ArrayList<>();
+
+
     @OneToOne
     @JoinColumn(name = "username")
     private UserApp userapp;
 
-    @OneToMany(mappedBy = "owner")
-    private Pet pet;
 
-    public Owner () {}
+    public Owner() {
+    }
 
-    public Owner (String person_id, String name, String adress, String neighborhood) {
+    public Owner(String person_id, String name, String adress, String neighborhood) {
         this.person_id = person_id;
         this.name = name;
         this.adress = adress;
@@ -48,7 +53,7 @@ public class Owner {
 
     }
 
-    public Owner (String username,String person_id, String name, String adress, String neighborhood) {
+    public Owner(String username, String person_id, String name, String adress, String neighborhood) {
         this.username = username;
         this.person_id = person_id;
         this.name = name;
@@ -56,11 +61,6 @@ public class Owner {
         this.neighborhood = neighborhood;
 
     }
-    public void addPet(Pet pet) {
-        this.pet = pet;
-        pet.setOwner(this);
-    }
-
 
     public String getUsername() {
         return username;
@@ -102,6 +102,14 @@ public class Owner {
         this.neighborhood = neighborhood;
     }
 
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
+
     public UserApp getUserapp() {
         return userapp;
     }
@@ -110,12 +118,10 @@ public class Owner {
         this.userapp = userapp;
     }
 
-    public Pet getPet() {
-        return pet;
+    public void addPet(Pet pet) {
+        pets.add(pet);
+        pet.setOwner(this);
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
 
 }

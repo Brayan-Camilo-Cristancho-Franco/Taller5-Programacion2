@@ -31,7 +31,7 @@ public class PetCase {
 
     @ManyToOne()
     @JoinColumn(name = "pet_id")
-    private Pet pet_id;
+    private Pet pet;
 
     public PetCase() {
     }
@@ -42,14 +42,13 @@ public class PetCase {
         this.description = description;
     }
 
-    public PetCase(Integer case_id, Date created_at, String type, String description, Pet pet_id) {
+    public PetCase(Integer case_id, Date created_at, String type, String description, Pet pet) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
         this.description = description;
-        this.pet_id = pet_id;
+        this.pet = pet;
     }
-
 
     public Integer getCase_id() {
         return case_id;
@@ -83,12 +82,11 @@ public class PetCase {
         this.description = description;
     }
 
-    public Pet getPet_id() {
-        return pet_id;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPet_id(Pet pet_id) {
-        this.pet_id = pet_id;
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
-
 }

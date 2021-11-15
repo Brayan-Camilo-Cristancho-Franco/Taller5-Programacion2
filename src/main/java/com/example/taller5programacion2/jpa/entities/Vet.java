@@ -2,6 +2,8 @@ package com.example.taller5programacion2.jpa.entities;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "vet") // Optional
@@ -25,32 +27,28 @@ public class Vet {
     private String neighborhood;
 
 
+    @OneToMany(mappedBy = "vet")
+    private List<Visit> visits = new ArrayList<>();
 
     @OneToOne
     @JoinColumn(name = "username")
     private UserApp userapp;
 
-    @OneToOne(mappedBy = "vet")
-    private Visit visit;
 
-    public Vet (){}
+    public Vet() {
+    }
 
-    public Vet (String name, String adress, String neighborhood){
+    public Vet(String name, String adress, String neighborhood) {
         this.name = name;
         this.adress = adress;
         this.neighborhood = neighborhood;
     }
 
-    public Vet (String username ,String name, String adress, String neighborhood){
+    public Vet(String username, String name, String adress, String neighborhood) {
         this.username = username;
         this.name = name;
         this.adress = adress;
         this.neighborhood = neighborhood;
-    }
-
-    public void addVist(Visit visit) {
-        this.visit = visit;
-        visit.setVet(this);
     }
 
     public String getUsername() {
@@ -85,19 +83,19 @@ public class Vet {
         this.neighborhood = neighborhood;
     }
 
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
+
     public UserApp getUserapp() {
         return userapp;
     }
 
     public void setUserapp(UserApp userapp) {
         this.userapp = userapp;
-    }
-
-    public Visit getVisit() {
-        return visit;
-    }
-
-    public void setVisit(Visit visit) {
-        this.visit = visit;
     }
 }

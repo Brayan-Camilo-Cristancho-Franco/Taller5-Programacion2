@@ -1,20 +1,20 @@
 package com.example.taller5programacion2.jpa.repositories;
 
-import edu.unbosque.JPATutorial.jpa.entities.Book;
+import com.example.taller5programacion2.jpa.entities.Owner;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class BookRepositoryImpl implements BookRepository {
+public class OwnerRepositoryImpl implements OwnerRepository {
 
     private EntityManager entityManager;
 
-    public BookRepositoryImpl(EntityManager entityManager) {
+    public OwnerRepositoryImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    public Optional<Book> findById(Integer id) {
+    /*public Optional<Book> findById(Integer id) {
         Book book = entityManager.find(Book.class, id);
         return book != null ? Optional.of(book) : Optional.empty();
     }
@@ -31,18 +31,41 @@ public class BookRepositoryImpl implements BookRepository {
                 .setParameter("title", title)
                 .getSingleResult();
         return book != null ? Optional.of(book) : Optional.empty();
+    }*/
+
+    public List<Owner> findAll() {
+        return entityManager.createQuery("from Owner").getResultList();
     }
 
-    public List<Book> findAll() {
-        return entityManager.createQuery("from Book").getResultList();
-    }
+    public Optional<Owner> update(String userame, String name,String adress, String neighborhood) {
 
-    public Optional<Book> save(Book book) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(book);
+
+            Owner owner = entityManager.find(Owner.class, userame);
+            owner.setName(name);
+            owner.setAdress(adress);
+            owner.setNeighborhood(neighborhood);
+
+
+            //entityManager.update(owner); // Revisar si esto es obligatorio
             entityManager.getTransaction().commit();
-            return Optional.of(book);
+
+            return Optional.of(owner);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+    }
+
+    public Optional<Owner> save(Owner owner) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(owner);
+            entityManager.getTransaction().commit();
+            return Optional.of(owner);
         } catch (Exception e) {
             e.printStackTrace();
         }
