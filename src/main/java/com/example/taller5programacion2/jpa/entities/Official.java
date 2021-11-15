@@ -1,3 +1,5 @@
+package com.example.taller5programacion2.jpa.entities;
+
 import javax.persistence.*;
 
 @Entity

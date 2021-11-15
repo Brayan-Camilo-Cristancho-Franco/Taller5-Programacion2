@@ -11,6 +11,7 @@ import java.util.List;
                 query = "SELECT a FROM Pet a WHERE a.microchip = :name")
 })
 public class Pet {
+    private String hola;
 
     @Id
     @GeneratedValue
@@ -44,6 +45,10 @@ public class Pet {
 
     @OneToMany(mappedBy = "pet_id")
     private List<Visit> visits = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "username")
+    private Owner owner;
 
 
     public Pet() {
@@ -141,6 +146,22 @@ public class Pet {
 
     public void setPetscase(List<PetCase> petscase) {
         Petscase = petscase;
+    }
+
+    public List<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 
     public void addPetCase(PetCase petcase) {

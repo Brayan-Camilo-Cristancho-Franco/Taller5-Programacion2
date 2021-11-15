@@ -1,4 +1,5 @@
-import com.example.taller5programacion2.resources.pojos.Visit;
+package com.example.taller5programacion2.jpa.entities;
+
 
 import javax.persistence.*;
 
@@ -92,11 +93,11 @@ public class Vet {
         this.userapp = userapp;
     }
 
-    public Vet getVet() {
-        return vet;
+    public Visit getVisit() {
+        return visit;
     }
 
-    public void setVet(Vet vet) {
-        this.vet = vet;
+    public void setVisit(Visit visit) {
+        this.visit = visit;
     }
 }

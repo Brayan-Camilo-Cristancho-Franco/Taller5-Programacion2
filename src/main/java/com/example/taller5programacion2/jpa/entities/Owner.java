@@ -1,4 +1,7 @@
-import com.example.taller5programacion2.resources.pojos.Pet;
+package com.example.taller5programacion2.jpa.entities;
+
+import com.example.taller5programacion2.jpa.entities.Pet;
+import com.example.taller5programacion2.jpa.entities.UserApp;
 
 import javax.persistence.*;
 
@@ -28,12 +31,11 @@ public class Owner {
     private String neighborhood;
 
 
-
     @OneToOne
     @JoinColumn(name = "username")
     private UserApp userapp;
 
-    @OneToOne(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner")
     private Pet pet;
 
     public Owner () {}
@@ -58,6 +60,7 @@ public class Owner {
         this.pet = pet;
         pet.setOwner(this);
     }
+
 
     public String getUsername() {
         return username;

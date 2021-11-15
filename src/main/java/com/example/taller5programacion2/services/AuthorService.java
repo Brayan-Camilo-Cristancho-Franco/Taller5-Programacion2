@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.services;
 
-import edu.unbosque.JPATutorial.jpa.entities.Author;
+/*import edu.unbosque.JPATutorial.jpa.entities.Author;
 import edu.unbosque.JPATutorial.jpa.repositories.AuthorRepository;
 import edu.unbosque.JPATutorial.jpa.repositories.AuthorRepositoryImpl;
 import edu.unbosque.JPATutorial.servlets.pojos.AuthorPOJO;
@@ -12,8 +12,8 @@ import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
 
-@Stateless
-public class AuthorService {
+@Stateless*/
+/*public class AuthorService {
 
     AuthorRepository authorRepository;
 
@@ -72,3 +72,4 @@ public class AuthorService {
     }
 
 }
+*/

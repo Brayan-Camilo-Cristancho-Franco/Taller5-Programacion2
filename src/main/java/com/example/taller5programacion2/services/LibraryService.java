@@ -1,6 +1,6 @@
 package com.example.taller5programacion2.services;
 
-import edu.unbosque.JPATutorial.jpa.entities.Library;
+/*import edu.unbosque.JPATutorial.jpa.entities.Library;
 import edu.unbosque.JPATutorial.jpa.repositories.LibraryRepository;
 import edu.unbosque.JPATutorial.jpa.repositories.LibraryRepositoryImpl;
 import edu.unbosque.JPATutorial.servlets.pojos.LibraryPOJO;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-public class LibraryService {
+/*public class LibraryService {
 
     LibraryRepository libraryRepository;
 
@@ -58,3 +58,4 @@ public class LibraryService {
     }
 
 }
+*/
