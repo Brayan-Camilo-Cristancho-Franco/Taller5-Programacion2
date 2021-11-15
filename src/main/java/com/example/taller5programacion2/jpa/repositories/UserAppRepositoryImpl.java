@@ -22,7 +22,6 @@ public class UserAppRepositoryImpl implements UserAppRepository {
 
     public List<UserApp> findAll() {
         return entityManager.createQuery("from UserApp").getResultList();
-
     }
 
     public Optional<UserApp> findByName(String email) {
@@ -63,7 +62,6 @@ public class UserAppRepositoryImpl implements UserAppRepository {
         }
         return Optional.empty();
     }
-
 
 
 }
