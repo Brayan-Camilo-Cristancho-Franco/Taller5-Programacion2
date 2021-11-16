@@ -1,4 +1,4 @@
-package com.example.taller5programacion2.jpa.entities.resources.pojos;
+package com.example.taller5programacion2.resources.pojos;
 
 import java.util.Date;
 

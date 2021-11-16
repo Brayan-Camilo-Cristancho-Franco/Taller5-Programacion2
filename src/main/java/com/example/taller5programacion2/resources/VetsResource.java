@@ -1,5 +1,7 @@
 package com.example.taller5programacion2.resources;
 
+import com.example.taller5programacion2.resources.pojos.VetPojo;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -13,9 +15,9 @@ public class VetsResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
 
-        List<com.example.taller5programacion2.jpa.entities.resources.pojos.VetPojo> authors = new ArrayList<com.example.taller5programacion2.jpa.entities.resources.pojos.VetPojo>();
-        authors.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.VetPojo("Veterinaria1", "Nombre veterinaria 1","Direccion1","Vecindario1"));
-        authors.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.VetPojo("Veterinaria2", "Nombre veterinaria 2","Direccion2","Vecindario2"));
+        List<VetPojo> authors = new ArrayList<VetPojo>();
+        authors.add(new VetPojo("Veterinaria1", "Nombre veterinaria 1", "Direccion1", "Vecindario1"));
+        authors.add(new VetPojo("Veterinaria2", "Nombre veterinaria 2", "Direccion2", "Vecindario2"));
 
         return Response.ok()
                 .entity(authors)
@@ -25,7 +27,7 @@ public class VetsResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(com.example.taller5programacion2.jpa.entities.resources.pojos.VetPojo vet) {
+    public Response create(VetPojo vet) {
 
         vet.setUsername("veterinaria3");
 

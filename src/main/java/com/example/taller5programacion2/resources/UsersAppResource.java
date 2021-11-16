@@ -1,5 +1,7 @@
 package com.example.taller5programacion2.resources;
 
+import com.example.taller5programacion2.resources.pojos.UserAppPojo;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -13,9 +15,9 @@ public class UsersAppResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(@PathParam("rol") String rol) {
 
-        List<com.example.taller5programacion2.jpa.entities.resources.pojos.UserAppPojo> usersapp = new ArrayList<com.example.taller5programacion2.jpa.entities.resources.pojos.UserAppPojo>();
-        usersapp.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.UserAppPojo("pepe", "a123","hdfd@gmail.com","Owner"));
-        usersapp.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.UserAppPojo("fer", "b321","dsfdsf@gmail.com","Official"));
+        List<UserAppPojo> usersapp = new ArrayList<UserAppPojo>();
+        usersapp.add(new UserAppPojo("pepe", "a123","hdfd@gmail.com","Owner"));
+        usersapp.add(new UserAppPojo("fer", "b321","dsfdsf@gmail.com","Official"));
 
         return Response.ok()
                 .entity(usersapp)
@@ -25,9 +27,9 @@ public class UsersAppResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(com.example.taller5programacion2.jpa.entities.resources.pojos.UserAppPojo userapp) {
+    public Response create(UserAppPojo userapp) {
 
-        userapp.setUsername("elbrayan");
+        userapp.setUsername("Username");
 
         return Response.status(Response.Status.CREATED)
                 .entity(userapp)
