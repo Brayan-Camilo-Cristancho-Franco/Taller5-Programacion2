@@ -1,4 +1,4 @@
-package com.example.taller5programacion2.jpa.entities.resources;
+package com.example.taller5programacion2.resources;
 
 
 import javax.ws.rs.*;

@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class VisitRepositoryImpl {
+public class VisitRepositoryImpl implements VisitRepository {
 
     private EntityManager entityManager;
 
@@ -22,7 +22,6 @@ public class VisitRepositoryImpl {
     public List<Visit> findAll() {
         return entityManager.createQuery("from Visit").getResultList();
     }
-
 
 
     public Optional<Visit> save(Visit visit) {

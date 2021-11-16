@@ -19,12 +19,7 @@ public class OfficialRepositoryImpl implements OfficialRepository {
         return entityManager.createQuery("from Author").getResultList();
     }
 
-    /* public Optional<Official> findByName(String name) {
-         Official official = entityManager.createNamedQuery("Official.findByName", Author.class)
-                 .setParameter("name", name)
-                 .getSingleResult();
-         return author != null ? Optional.of(author) : Optional.empty();
-     }*/
+
     public Optional<Official> update(String username, String name) {
 
         try {

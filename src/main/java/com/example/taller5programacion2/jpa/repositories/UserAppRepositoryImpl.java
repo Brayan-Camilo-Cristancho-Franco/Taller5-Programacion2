@@ -15,7 +15,7 @@ public class UserAppRepositoryImpl implements UserAppRepository {
         this.entityManager = entityManager;
     }
 
-    public Optional<UserApp> findById(String username) {
+    public Optional<UserApp> findByUsername(String username) {
         UserApp userapp = entityManager.find(UserApp.class, username);
         return userapp != null ? Optional.of(userapp) : Optional.empty();
     }

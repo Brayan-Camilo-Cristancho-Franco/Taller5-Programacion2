@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class PetCaseRepositoryImpl {
+public class PetCaseRepositoryImpl implements  PetCaseRepository {
 
     private EntityManager entityManager;
 

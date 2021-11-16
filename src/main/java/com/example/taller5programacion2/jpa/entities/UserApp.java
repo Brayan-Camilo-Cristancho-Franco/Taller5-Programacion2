@@ -6,7 +6,9 @@ import javax.persistence.*;
 @Table(name = "UserApp") // Optional
 @NamedQueries({
         @NamedQuery(name = "UserApp.findByEmail",
-                query = "SELECT a FROM UserApp a WHERE a.email = :email")
+                query = "SELECT a FROM UserApp a WHERE a.email = :email"),
+        @NamedQuery(name = "UserApp.findByUsername",
+                query = "SELECT a FROM UserApp a WHERE a.username = :username")
 })
 
 public class UserApp {

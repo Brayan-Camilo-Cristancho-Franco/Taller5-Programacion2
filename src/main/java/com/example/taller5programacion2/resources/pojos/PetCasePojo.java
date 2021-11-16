@@ -1,13 +1,15 @@
 package com.example.taller5programacion2.jpa.entities.resources.pojos;
 
+import java.util.Date;
+
 public class PetCasePojo {
     private Integer case_id;
-    private String created_at;
+    private Date created_at;
     private String type;
     private String description;
     private Integer pet_id;
 
-    public PetCasePojo(Integer case_id, String created_at, String type, String description, Integer pet_id) {
+    public PetCasePojo(Integer case_id, Date created_at, String type, String description, Integer pet_id) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
@@ -23,11 +25,11 @@ public class PetCasePojo {
         this.case_id = case_id;
     }
 
-    public String getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(String created_at) {
+    public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
 

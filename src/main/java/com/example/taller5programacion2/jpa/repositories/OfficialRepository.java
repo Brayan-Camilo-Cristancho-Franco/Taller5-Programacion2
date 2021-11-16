@@ -12,4 +12,6 @@ public interface OfficialRepository {
 
     Optional<Official> save(Official author);
 
+    Optional<Official> update(String username, String name);
+
 }

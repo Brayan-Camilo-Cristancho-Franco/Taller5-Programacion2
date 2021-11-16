@@ -1,4 +1,4 @@
-package com.example.taller5programacion2.jpa.entities.resources;
+package com.example.taller5programacion2.resources;
 
 
 import javax.ws.rs.*;
@@ -14,8 +14,8 @@ public class PetsCaseResource {
     public Response list(@PathParam("pet_id") Integer authorId) {
 
         List<com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo> petcase = new ArrayList<com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo>();
-        petcase.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo(1, "Fecha1", "Perdida", "Perdida descripcion",1));
-        petcase.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo(2, "Fecha2", "Fallecimiento", "Fallecimiento descripcion",2));
+        petcase.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo(1, null, "Perdida", "Perdida descripcion",1));
+        petcase.add(new com.example.taller5programacion2.jpa.entities.resources.pojos.PetCasePojo(2, null, "Fallecimiento", "Fallecimiento descripcion",2));
 
         return Response.ok()
                 .entity(petcase)

@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
-public class VetRepositoryImpl {
+public class VetRepositoryImpl implements  VetRepository {
 
     private EntityManager entityManager;
 

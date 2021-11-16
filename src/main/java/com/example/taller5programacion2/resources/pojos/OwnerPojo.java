@@ -1,22 +1,22 @@
-package com.example.taller5programacion2.jpa.entities.resources.pojos;
+package com.example.taller5programacion2.resources.pojos;
 
 public class OwnerPojo {
     private String username;
-    private Integer person_id;
+    private String person_id;
     private String name;
     private String adress;
     private String neighborhood;
 
 
-    public OwnerPojo(){}
+    public OwnerPojo() {
+    }
 
-    public OwnerPojo(String username, Integer person_id, String name, String adress, String neighborhood) {
+    public OwnerPojo(String username, String person_id, String name, String adress, String neighborhood) {
         this.username = username;
         this.person_id = person_id;
         this.name = name;
         this.adress = adress;
         this.neighborhood = neighborhood;
-
     }
 
     public String getUsername() {
@@ -27,11 +27,11 @@ public class OwnerPojo {
         this.username = username;
     }
 
-    public Integer getPerson_id() {
+    public String getPerson_id() {
         return person_id;
     }
 
-    public void setPerson_id(Integer person_id) {
+    public void setPerson_id(String person_id) {
         this.person_id = person_id;
     }
 

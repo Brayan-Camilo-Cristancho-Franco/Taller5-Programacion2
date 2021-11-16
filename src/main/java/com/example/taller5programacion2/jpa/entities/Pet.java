@@ -8,8 +8,8 @@ import java.util.List;
 @Table(name = "Pet") // Optional
 @NamedQueries({
 
-        @NamedQuery(name = "Pet.findByMicrochip",
-                query = "SELECT a FROM Pet a WHERE a.microchip = :name"),
+        @NamedQuery(name = "Pet.findById",
+                query = "SELECT a FROM Pet a WHERE a.pet_id = :pet_id"),
 
         @NamedQuery(name = "Pet.findAll",
                 query = "SELECT a FROM Pet a")

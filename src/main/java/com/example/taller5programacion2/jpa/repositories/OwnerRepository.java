@@ -10,4 +10,6 @@ public interface OwnerRepository {
 
     Optional<Owner> save(Owner book);
 
+    Optional<Owner> update(String userame, String name,String adress, String neighborhood);
+
 }
