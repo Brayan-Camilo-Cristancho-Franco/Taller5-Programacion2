@@ -16,7 +16,7 @@ public class OfficialRepositoryImpl implements OfficialRepository {
     }
 
     public List<Official> findAll() {
-        return entityManager.createQuery("from Author").getResultList();
+        return entityManager.createQuery("from Official").getResultList();
     }
 
 

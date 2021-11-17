@@ -59,7 +59,7 @@ public class OfficialService {
 
     }
 
-    public Optional<OfficialPojo> updateUserApp(String username, String name) {
+    public Optional<OfficialPojo> updateOfficial(String username, String name) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

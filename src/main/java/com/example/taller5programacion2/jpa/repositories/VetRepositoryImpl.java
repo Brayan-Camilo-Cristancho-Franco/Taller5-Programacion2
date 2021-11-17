@@ -20,7 +20,7 @@ public class VetRepositoryImpl implements  VetRepository {
     }
 
 
-    public List<Vet> findAll() {
+    public List findAll() {
         return entityManager.createQuery("from Vet").getResultList();
     }
 

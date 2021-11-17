@@ -2,6 +2,9 @@ package com.example.taller5programacion2.resources;
 
 
 import com.example.taller5programacion2.resources.pojos.PetCasePojo;
+import com.example.taller5programacion2.services.PetCaseService;
+import com.example.taller5programacion2.services.PetService;
+import com.example.taller5programacion2.services.VisitService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -9,11 +12,12 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/pets/{pet_id}/petscase")
+@Path("/petscase")
 public class PetsCaseResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/pet/{pet_id}")
     public Response list(@PathParam("pet_id") Integer authorId) {
 
         List<PetCasePojo> petcase = new ArrayList<PetCasePojo>();
@@ -28,12 +32,31 @@ public class PetsCaseResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("pet_id") Integer pet_id, PetCasePojo petcase) {
 
-        petcase.setDescription("perdida descripcion");
+    public Response create(PetCasePojo petcase) {
 
-        return Response.status(Response.Status.CREATED)
-                .entity(petcase)
-                .build();
+
+        new PetCaseService().savePetCase(petcase.getCreated_at(),petcase.getType(), petcase.getDescription(), petcase.getPet_id());
+
+
+        if (petcase.getType().equals("Perdida")||petcase.getType().equals("Robo")||petcase.getType().equals("Fallecimiento")) {
+
+            if (petcase != null) {
+                return Response.status(Response.Status.CREATED)
+                        .entity(petcase)
+                        .build();
+            } else {
+                return Response.serverError()
+                        .entity("Owner user could not be created")
+                        .build();
+            }
+        } else {
+            return Response.serverError()
+                    .entity("Owner user could not be created")
+                    .build();
+
+        }
+
+
     }
 }

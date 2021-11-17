@@ -11,8 +11,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.awt.print.Book;
-import java.util.Date;
 import java.util.Optional;
 
 
@@ -22,7 +20,7 @@ public class VisitService {
     VisitRepository visitRepository;
     PetRepository petRepository;
 
-    public void saveVisit(Date created_at, String type, String description,Integer pet_id) {
+    public void saveVisit(String created_at, String type, String description,Integer pet_id) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
