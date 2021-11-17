@@ -2,7 +2,7 @@ package com.example.taller5programacion2.jpa.entities;
 
 
 import javax.persistence.*;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "visit") // Optional
@@ -18,7 +18,7 @@ public class Visit {
     private Integer visit_id;
 
     @Column(name = "created_at")
-    private Date created_at;
+    private String created_at;
 
     @Column(name = "type", nullable = false)
     private String type;
@@ -37,13 +37,13 @@ public class Visit {
     public Visit() {
     }
 
-    public Visit(Date created_at, String type, String description) {
+    public Visit(String created_at, String type, String description) {
         this.created_at = created_at;
         this.type = type;
         this.description = description;
     }
 
-    public Visit(Integer visit_id, Date created_at, String type, String description, Pet pet, Vet vet) {
+    public Visit(Integer visit_id, String created_at, String type, String description, Pet pet, Vet vet) {
         this.visit_id = visit_id;
         this.created_at = created_at;
         this.type = type;
@@ -60,11 +60,11 @@ public class Visit {
         this.visit_id = visit_id;
     }
 
-    public Date getCreated_at() {
+    public String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
+    public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
 

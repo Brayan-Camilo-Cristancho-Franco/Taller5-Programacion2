@@ -42,6 +42,19 @@ public class PetRepositoryImpl implements PetRepository {
         return Optional.empty();
     }
 
+    public Optional<Pet> updateMicrochip(Integer pet_id, String microchp) {
+        try {
+            entityManager.getTransaction().begin();
+            Pet pet = entityManager.find(Pet.class, pet_id);
+            pet.setMicrochip(microchp);
+            entityManager.getTransaction().commit();
+            return Optional.of(pet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
+
+    }
 
     public Optional<Pet> save(Pet pet) {
         try {

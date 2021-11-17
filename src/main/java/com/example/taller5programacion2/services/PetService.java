@@ -10,8 +10,8 @@ import javax.persistence.Persistence;
 import java.util.ArrayList;
 
 
-import com.example.taller5programacion2.jpa.entities.resources.pojos.PetPojo;
 import com.example.taller5programacion2.jpa.repositories.PetRepositoryImpl;
+import com.example.taller5programacion2.resources.pojos.PetPojo;
 
 import java.util.List;
 
@@ -77,6 +77,20 @@ public class PetService {
 
         entityManager.close();
         entityManagerFactory.close();
+
+    }
+
+    public void updatePetMicrochi(Integer pet_id, String microchip) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        PetRepository = new PetRepositoryImpl(entityManager);
+        PetRepository.updateMicrochip(pet_id,microchip);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
 
     }
 }

@@ -13,6 +13,8 @@ public interface PetRepository {
 
     Optional<Pet> update(Integer pet_id, String name, String species, String race, String size, String sex, String picture);
 
+    Optional<Pet> updateMicrochip(Integer pet_id, String microchip);
+
     Optional<Pet> save(Pet pet);
 
 }

@@ -1,19 +1,42 @@
 package com.example.taller5programacion2.resources.pojos;
 
+import com.example.taller5programacion2.jpa.entities.Owner;
+
 public class UserAppPojo {
     private String username;
     private String password;
     private String email;
     private String role;
+    private OfficialPojo officialPojo;
+    private OwnerPojo ownerPojo;
+    private VetPojo vetPojo;
 
     public UserAppPojo(){
 
     }
-    public UserAppPojo(String username, String password, String email, String role) {
+    public UserAppPojo(String username, String password, String email, String role, OfficialPojo officialPojo) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.role = role;
+        this.officialPojo = officialPojo;
+
+    }
+
+    public UserAppPojo(String username, String password, String email, String role, OwnerPojo ownerPojo) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+        this.ownerPojo = ownerPojo;
+    }
+
+    public UserAppPojo(String username, String password, String email, String role,VetPojo vetPojo) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+        this.vetPojo = vetPojo;
     }
 
     public String getUsername() {
@@ -46,5 +69,28 @@ public class UserAppPojo {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public OwnerPojo getOwnerPojo() {
+        return ownerPojo;
+    }
+    public void setOwnerPojo(OwnerPojo ownerPojo) {
+        this.ownerPojo = ownerPojo;
+    }
+
+    public OfficialPojo getOfficialPojo() {
+        return officialPojo;
+    }
+
+    public void setOfficialPojo(OfficialPojo officialPojo) {
+        this.officialPojo = officialPojo;
+    }
+
+    public VetPojo getVetPojo() {
+        return vetPojo;
+    }
+
+    public void setVetPojo(VetPojo vetPojo) {
+        this.vetPojo = vetPojo;
     }
 }

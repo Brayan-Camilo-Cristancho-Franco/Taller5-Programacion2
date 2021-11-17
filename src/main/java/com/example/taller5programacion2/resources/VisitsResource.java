@@ -1,6 +1,8 @@
 package com.example.taller5programacion2.resources;
 
 import com.example.taller5programacion2.resources.pojos.VisitPojo;
+import com.example.taller5programacion2.services.PetService;
+import com.example.taller5programacion2.services.VisitService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -8,10 +10,11 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/vets/{username}/pets/{pet_id}/visits")
+@Path("/visits")
 public class VisitsResource {
 
     @GET
+    @Path("/{username}/pet/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id) {
 
@@ -27,12 +30,30 @@ public class VisitsResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response create(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id, VisitPojo visit) {
+    @Path("/pets/{pet_id}/vets/{vet_id}")
+    public Response create(@PathParam("vet_id") String vet_id, @PathParam("pet_id") Integer pet_id, VisitPojo visit, String microchip) {
 
-        visit.setDescription("Nueva descripcion");
+        new VisitService().saveVisit(visit.getCreated_at(), visit.getType(), visit.getDescription(), pet_id);
 
-        return Response.status(Response.Status.CREATED)
-                .entity(visit)
-                .build();
+
+        if (visit.getType().equals("Esterilizacion") || visit.getType().equals("Implantacion de microchip") || visit.getType().equals("Vacunacion") || visit.getType().equals("Desparasitacion") || visit.getType().equals("Urgencia") || visit.getType().equals("Control")) {
+
+            new PetService().updatePetMicrochi(pet_id, microchip);
+            if (visit != null) {
+                return Response.status(Response.Status.CREATED)
+                        .entity(visit)
+                        .build();
+            } else {
+                return Response.serverError()
+                        .entity("Owner user could not be created")
+                        .build();
+            }
+        } else {
+            return Response.serverError()
+                    .entity("Owner user could not be created")
+                    .build();
+
+        }
+
     }
 }
