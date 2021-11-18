@@ -16,7 +16,7 @@ public class UserAppResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Response modify(@PathParam("username") String username, UserAppPojo userApp, String email, String name, String address, String neighborhood) {
+    public Response modify( @PathParam("username") String username, UserAppPojo userApp, String email, String name, String address, String neighborhood) {
 
         if (userApp.getOwnerPojo() != null) {
             new UserAppService().updateUserApp(username, userApp.getEmail());

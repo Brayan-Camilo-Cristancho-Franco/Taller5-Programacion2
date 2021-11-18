@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@Path("/owners/{username}")
+@Path("/owners/{username}/pets")
 public class PetsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)

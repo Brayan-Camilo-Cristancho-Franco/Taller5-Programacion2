@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Path("/usersapp/{rol}/usersapp")
+@Path("/usersapp")
 
 public class UsersAppResource {
 

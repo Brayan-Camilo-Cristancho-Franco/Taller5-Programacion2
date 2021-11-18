@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "8821bb44-41c4-46fb-af5a-809bf9c12fc8",
+		"name": "Taller5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"“username”\" : \"“XXX”\",\r\n  \"“password”\":\"“XXX”\",\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“role”\": \"“owners”\",\r\n   \"“owner”\": {\r\n      \"“person_id”\": \"000\",\r\n      \"“name”\": \"“ZZZ”\",\r\n     \" “address”\": \"“WWW”\",\r\n      \"“neighborhood”\": \"“AAA”\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp/XXX",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“name”\": \"“ZZZ”\",\r\n  \"“address”\": \"“WWW”\",\r\n  \"“neighborhood”\": \"“AAA”\"\r\n  \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp/XXX",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp",
+						"XXX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"“username”\" : \"“YYY”\",\r\n  \"“password”\":\"“XXX”\",\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“role”\": \"“officials”\",\r\n   \"official\": {\r\n      \"“name”\": \"“ZZZ”\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp/YYY",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“name”\": \"“ZZZ”\"  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp/YYY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp",
+						"YYY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"“username”\" : \"ZZZ\",\r\n  \"“password”\":\"“XXX”\",\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“role”\": \"“vets”\",\r\n   \"“vet”\": {\r\n      \"“name”\": \"“ZZZ”\",\r\n     \" “address”\": \"“WWW”\",\r\n      \"“neighborhood”\": \"“AAA”\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"”email”\": \"”xxx@yyy.com”\",\r\n  \"“name”\": \"“ZZZ”\",\r\n  \"“address”\": \"“WWW”\",\r\n  \"“neighborhood”\": \"“AAA”\"\r\n  \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/usersapp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"usersapp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/owners/XXXX/pets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"“microchip”\" : \"microchip1\",\r\n  \"name\":\"elbrayan\",\r\n  \"species\": \"cat\",\r\n  \"race\": \"felino\",\r\n  \"size\": \"1 metro\",\r\n  \"sex\": \"male\",\r\n  \"picture\": \"https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/594a1ced5bafe85dfd3c9869/gato-romano_0.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/owners/XXXX/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"owners",
+						"XXXX",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/pets/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"pepe\",\r\n  \"species\": \"dog\",\r\n  \"race\": \"canino\",\r\n  \"size\": \"1.5 metro\",\r\n  \"sex\": \"male\",\r\n  \"picture\": \"https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/594a1ced5bafe85dfd3c9869/gato-romano_0.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/pets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"pets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/petscase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"created_at\" : \"10/11/21\",\r\n  \"type\":\"Robo\",\r\n  \"description\": \"adsedf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/petscase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"petscase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/visits",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"created_at\" : \"10/11/21\",\r\n  \"type\":\"Esterilizacion\",\r\n  \"description\": \"adsedf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Taller5-Programacion2-1.0-SNAPSHOT/api/visits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Taller5-Programacion2-1.0-SNAPSHOT",
+						"api",
+						"visits"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
